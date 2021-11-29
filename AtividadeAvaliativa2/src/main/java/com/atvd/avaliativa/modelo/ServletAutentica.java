@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/ServletAutentica")
 public class ServletAutentica extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String USUARIO = "usuario";
+	private static final String USUARIO = "usuario"; // vari·vel string est·tica que receber· o campo Login/Usu·rio com o intuito de gerar a sess„o;
        
     public ServletAutentica() {
         super();
@@ -29,27 +29,29 @@ public class ServletAutentica extends HttpServlet {
 		
 		saida.write("<html><body>");
 		
-		String usuario = request.getParameter(USUARIO);
-		String senha = request.getParameter("senha");
+		String usuario = request.getParameter(USUARIO); // recebe o campo login/usu·rio que no caso È 'professor' como par‚metro correto.
+		String senha = request.getParameter("senha"); // recebe o campo senha que no caso È 'progweb2021' como par‚metro correto.
 		
 		if (autentica(usuario,senha)) {
-			HttpSession sessao = request.getSession(); //criando a sessao
-			sessao.setAttribute(USUARIO, usuario); //registrando o usuario com o nome do usuario na sessao.
+			HttpSession sessao = request.getSession(); //criando a sess„o
+			sessao.setAttribute(USUARIO, usuario); //registrando o usu·rio com o nome do usu·rio na sess„o.
 			
-			response.sendRedirect(request.getContextPath()+"/menu.jsp"); //redirecionando para o menu.
+			response.sendRedirect(request.getContextPath()+"/menu.jsp"); //redirecionando para o programa 'menu.jsp'.
 		}else {
-			saida.write("Usuario ou senha incorretos. <br>");
-			saida.write("<a href=\"autentica.jsp\">Tentar novamente.</a>");
+			saida.write("Usu·rio ou senha incorretos. <br>");
+			saida.write("<a href=\"autentica.jsp\">Tente novamente aqui.</a>");
 		}
 		
 		
 	}
 	private boolean autentica(String usuario, String senha) {
+		
+// Aqui indicamos que quando o usu·rio for "professor" e a senha for "Progweb2021",
+// ser· criada uma sess„o e haver· um redirecionamento para a p·gina inicial.
+		
 		if (usuario.equals("professor") && senha.equals("Progweb2021")) {
 			return true;
 		}
-		//Se o usu√°rio for "professor" e a senha for "Progweb2021", 
-		//ele criar√° uma sess√£o e redirecionar√° para a p√°gina inicial
 		
 		return false;
 	}

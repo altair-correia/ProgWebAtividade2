@@ -6,22 +6,22 @@
 <meta charset="UTF-8">
 <title>Menu</title>
 </head>
-<body>
+<body style="text-align: center; margin-top: 15rem; background: #022; color: #fff; font-family: 'Poppins', sans-serif;"> 
 <%
-//verificacao se o usuario esta logado
+//verificação do login do usuário
 String sessao=(String)session.getAttribute("usuario");
 if (sessao == null){%>
-	<a href="autentica.jsp">Faça primeiro o login</a>
+	<a href="autentica.jsp">Realize o Login primeiro!</a>
 	
 	<%}else{ %>
 <%@ include file="header.jsp" %>
 <h1>Menu</h1>
 <li>
-	<a href="ServletControlador?resposta=cadastro">Cadastrar Disciplina e Notas</a>
+	<a href="ServletControlador?resposta=cadastro" style="text-decoration: none; color: #0f9">Cadastrar Disciplina e Notas</a>
 </li>
 <br>
 <li>	
-<a href="ServletControlador?resposta=listar">Listar Disciplinas e Notas</a>
+<a href="ServletControlador?resposta=listar" style="text-decoration: none; color: #0f9">Listar Disciplinas e Notas</a>
 </li>
 <%} %>
 </body>

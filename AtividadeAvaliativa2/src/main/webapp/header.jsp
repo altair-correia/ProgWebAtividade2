@@ -22,8 +22,8 @@ String usuario = (String)session.getAttribute("usuario");
 SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
 %>
 <div class="header">
-<li>Seja bem-vindo, <% out.print(usuario);%>.</li>
-<li><%= data.format(new Date()) %></li>
+	<li>Bem-vindo ao Sistema, <% out.print(usuario);%>.</li>
+	<li><%= data.format(new Date()) %></li>
 </div>
 </body>
 </html>

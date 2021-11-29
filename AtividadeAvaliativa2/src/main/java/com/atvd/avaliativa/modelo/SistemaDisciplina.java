@@ -5,12 +5,12 @@ import java.util.List;
 
 public class SistemaDisciplina {
 	
-	private List<Disciplina> disciplinas = new ArrayList<Disciplina>(); //criando a lista do tipo disciplinas.
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>(); //criando um array do tipo disciplina.
 	
-	public void adicionar(Disciplina d) { // metodo para adcionar valores do tipo disciplina na lista.
+	public void adicionar(Disciplina d) { // método que adiciona valores do tipo disciplina no array.
 		disciplinas.add(d);
 	}
-	public List<Disciplina> listarDisciplinas(){ //listando a lista de disciplinas.
+	public List<Disciplina> listarDisciplinas(){ //listando o array de disciplinas.
 		return disciplinas;
 	}
 	

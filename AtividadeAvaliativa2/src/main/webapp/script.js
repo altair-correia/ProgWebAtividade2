@@ -1,8 +1,8 @@
 function autenticaNumero(value) {
     //verifica se o campo está vazio
     if (value.trim() !== "") {
-        var regra = /^[0-9]+$/;
-        //valida se o valor do input é um número.
+        var regra = /^[0-9]+$/; // utilizada para evitar valores alfabéticos no input 
+         
         if (value.match(regra)) {
             //verifica se o valor esta de acordo com a regra.
         } else {
