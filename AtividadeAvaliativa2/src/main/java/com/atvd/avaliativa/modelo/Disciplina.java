@@ -1,6 +1,6 @@
 package com.atvd.avaliativa.modelo;
 
-public class Disciplina {
+public class Disciplina { // Criando a classe Disciplina() para setar o Nome e Nota da matéria dado pelo usuário.
 	
 	private String nome;
 	private String nota;

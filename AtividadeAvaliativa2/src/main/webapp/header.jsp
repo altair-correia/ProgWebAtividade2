@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Header</title>
+<!-- Programa que estabelece uma interface/relacionamento mais amigável para o usuário -->
 <style>
 .header{
 	list-style-type: none;
@@ -18,10 +19,12 @@
 </head>
 <body>
 <%
-String usuario = (String)session.getAttribute("usuario");
+String usuario = (String)session.getAttribute("usuario"); 
 SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+
+//Definindo cabeçalho de Boas Vindas com nome de usuário e data/hora do sistema
 %>
-<div class="header">
+<div class="header"> 
 	<li>Bem-vindo ao Sistema, <% out.print(usuario);%>.</li>
 	<li><%= data.format(new Date()) %></li>
 </div>
