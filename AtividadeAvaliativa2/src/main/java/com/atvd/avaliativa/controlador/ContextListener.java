@@ -14,7 +14,7 @@ public class ContextListener implements ServletContextListener{
 	
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
-		ServletContext context = event.getServletContext(); //pega o evento da aplicacao
+		ServletContext context = event.getServletContext(); //associa o evento à aplicação do sistema_disciplina como variável estática.
 		context.setAttribute(SISTEMA_DISCIPLINA, new SistemaDisciplina());
 		//
 	}
@@ -22,7 +22,7 @@ public class ContextListener implements ServletContextListener{
 	@Override
 	public void contextDestroyed(ServletContextEvent event) {
 		ServletContext context = event.getServletContext();
-		context.removeAttribute(SISTEMA_DISCIPLINA);
+		context.removeAttribute(SISTEMA_DISCIPLINA); //associa o evento à aplicação do sistema_disciplina como variável estática.
 		
 	}
 	

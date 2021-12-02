@@ -36,22 +36,22 @@ public class ServletControlador extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		String resposta = request.getParameter("resposta"); //resposta dada pelo link
+		String resposta = request.getParameter("resposta"); //resposta que é dada através do link
 		
 		SistemaDisciplina sistema = (SistemaDisciplina) getServletContext()
 				.getAttribute(ContextListener.SISTEMA_DISCIPLINA);
 		
 		String redirecionaTo = "menu.jsp";
-		//string responsável por dizer para qual página será redirecionado.
+		//string responsável para indicar a página que será redirecionado, no caso ao 'menu.jsp'.
 		
 		if ("cadastro".equals(resposta)) {
 			redirecionaTo = "cadastroDisciplinas.jsp";
 		}else if ("addDisciplina".equals(resposta)) {
-			Disciplina d = new Disciplina(); //instanciando a classe disciplina para poder pegar os setters.
+			Disciplina d = new Disciplina(); //definindo a classe disciplina para realizar os sets de Nome e Nota.
 			d.setNome(request.getParameter("nome"));
 			d.setNota(request.getParameter("nota"));
 			
-			sistema.adicionar(d);//chamando o metedo adicionar da classe Disciplina para adicionar uma nova disciplina na lista.
+			sistema.adicionar(d);//usando o método adicionar() da classe "Disciplina" para adicionar uma nova disciplina no array (lista).
 			
 			request.setAttribute("lista", sistema.listarDisciplinas());
 			redirecionaTo = "listaDisciplinas.jsp";
@@ -60,7 +60,7 @@ public class ServletControlador extends HttpServlet {
 			request.setAttribute("lista", sistema.listarDisciplinas());
 			redirecionaTo = "listaDisciplinas.jsp";
 		}else {
-			redirecionaTo = "menu.jsp";
+			redirecionaTo = "menu.jsp"; //redirecionando para o menu principal
 		
 		}
 		request.getRequestDispatcher(redirecionaTo).forward(request, response);

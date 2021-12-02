@@ -7,10 +7,11 @@
 <script type="text/javascript" src="script.js"></script>
 <title>Cadastrar Disciplina</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;&display=swap" rel="stylesheet">
+<!-- Definindo alguns parêmetrod de CSS in-line -->
 </head>
 <body style="text-align: center; margin-top: 15rem; background: #508; color: #fff; font-family: 'Poppins', sans-serif;">
 <%
-//usando sessio e autenticando se o usuário está logado
+//usando 'session' e autenticando/verificando se o usuário está logado
 String sessao=(String)session.getAttribute("usuario");
 if (sessao == null){%>
 	<a href="autentica.jsp">Realize o login primeiro</a>
@@ -25,6 +26,7 @@ if (sessao == null){%>
 <br><br>
 <label for="nota">Nota: </label><br><br>
 <input type="text" onkeyup="autenticaNumero(this.value)" name="nota" id="nota">
+<!-- Depois de finalizar a digitação da nota chama a aplicação de verificação autenticaNumero() no programa 'script.js'-->
 <br><br>
 <input type="submit" value="Cadastrar"> 
 </form>

@@ -10,13 +10,14 @@
 </head>
 <body style="margin-top: 15rem; background: #402; color: #fff; font-family: 'Poppins', sans-serif;">
 <%
-//autenticando se o usuário está logado através do uso session
+// autenticando se o usuário está logado através do uso de 'session'
+// caso seja negado, solicita que realize o login novamente
 String sessao=(String)session.getAttribute("usuario");
 if (sessao == null){%>
 	<a href="autentica.jsp" style="text-decoration: none; color: #fff">Faça primeiro o login</a>
-	
+
 	<%}else{ %>
-<%@ include file="header.jsp" %>
+<%@ include file="header.jsp" %> 
 <br><br>
 <table border="1" >
 	<tr>
